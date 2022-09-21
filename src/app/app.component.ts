@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { WeatherService } from '../app/services/weather.service';
 
 const API_URL = environment.API_URL;
 const API_KEY = environment.API_KEY;
@@ -16,7 +15,7 @@ export class AppComponent {
   weather: any
   weatherTemp: any;
   windSpeed: any
-  cityName: string = 'Islamabad'
+  cityName: string = 'Lahore'
   constructor(public httpClient: HttpClient) {
     this.loadData(this.cityName)
   }
