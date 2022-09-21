@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 80%;
+
+  .weather-box {
+    width: 400px;
+    height: 80vh;
+    background-color: var(--blue-2);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 10px var(--shadow-dark);
+
+    .upper-data {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 50%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .weather-data {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--shadow-dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .location {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+
+      .feels-like {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .temprature {
+        font-size: 3.5rem;
+        text-align: center;
+        font-weight: 900;
+
+      }
+    }
+  }
+
+  .lower-data {
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .more-info-container {
+      flex: 1;
+      background-color: var(--shadow-light);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .info-block {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+
+        .info-block-label {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 50%;
+
+          img {
+            width: 40px;
+          }
+
+          span {
+            font-size: 0.8rem;
+          }
+        }
+
+        .info-block-value {
+          width: 50%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 1.2rem;
+
+        }
+
+      }
+    }
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+
+  input {
+    background-color: var(--shadow-light);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+}

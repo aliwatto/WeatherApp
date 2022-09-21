@@ -1,0 +1,74 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input
+      type="text"
+      placeholder="Search City"
+      name="city"
+      [(ngModel)]="cityName"
+    />
+  </form>
+</div>
+
+<div class="container" *ngIf="weatherTemp">
+  <div class="weather-box">
+    <div class="upper-data">
+      <img src="../assets/hot.jpg" alt="" *ngIf="weatherTemp.temp > 26" />
+      <img
+        src="../assets/warm.jpeg"
+        alt=""
+        *ngIf="weatherTemp.temp > 10 && weatherTemp.temp < 26"
+      />
+      <img src="../assets/cold.jpg" alt="" *ngIf="weatherTemp.temp < 5" />
+
+      <div class="weather-data">
+        <div class="location">{{ weather.name }}</div>
+        <div class="temprature">{{ weatherTemp.temp.toFixed(0) }}&#xb0;C</div>
+        <div class="feels-like">
+          Feels Like: {{ weatherTemp.feels_like.toFixed(0) }}&#xb0;C
+        </div>
+      </div>
+    </div>
+    <div class="lower-data">
+      <div class="more-info-label">More Information</div>
+      <div class="more-info-container">
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/hot-temp.svg" alt="" />
+            <span>Max</span>
+          </div>
+          <div class="info-block-value">
+            {{ weatherTemp.temp_max.toFixed(0) }}&#xb0;C
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/cold-temp.svg" alt="" />
+            <span>Min</span>
+          </div>
+          <div class="info-block-value">
+            {{ weatherTemp.temp_min.toFixed(0) }}&#xb0;C
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/wind.svg" alt="" />
+            <span>Wind</span>
+          </div>
+          <div class="info-block-value">{{ windSpeed.speed }} m/s</div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/humidity.svg" alt="" />
+            <span>Humidity</span>
+          </div>
+          <div class="info-block-value">
+            {{ weatherTemp.temp_min.toFixed(0) }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
